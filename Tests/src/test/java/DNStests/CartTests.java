@@ -55,7 +55,7 @@ public class CartTests {
         //Подождать, пока добавление обработается и проверить, что товар добавлен в корзину
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-link:nth-child(3) > .cart-link__badge")));
         var elemeent = driver.findElement(By.cssSelector(".ui-link:nth-child(3) > .cart-link__badge"));
-        Assert.assertEquals("Wrong count of goods", "1", elemeent.getText());
+        Assert.assertEquals("Неверное колличество товаров в корзине", "1", elemeent.getText());
     }
 
     @Test
@@ -94,7 +94,7 @@ public class CartTests {
         //Проверить, что корзина пуста
         waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".empty-message__title-empty-cart")));
         var elemeent = driver.findElement(By.cssSelector(".empty-message__title-empty-cart"));
-        Assert.assertTrue("Wrong count of goods", elemeent.getText().contains("пуста"));
+        Assert.assertTrue("Корзина не пуста", elemeent.getText().contains("пуста"));
 
     }
 }
